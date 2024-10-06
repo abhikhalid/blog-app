@@ -4,22 +4,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1>getByDisplayValue and getAllByDisplayValue</h1>
+      <h1>getByTitle and getAllByTitle</h1>
 
-      <input type="text" defaultValue={'khalid'} />
-      
-      <br />
-
-      <input type="text" defaultValue={'khalid'} />
-
-      <br />
-
-      <textarea defaultValue={'khalid mahmud'} />
+      <button title='click'>Click me</button>
 
       <br />
       <br />
 
-      <input type="radio" defaultValue={'male'} />
+      <span title='black spade suit'>&#x2660;</span>
+      <span title='black spade suit'>&#x2660;</span>
+
 
     </div>
   );
