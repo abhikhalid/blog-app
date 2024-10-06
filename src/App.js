@@ -4,18 +4,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>RTL Query : getByText and getAllByText</h1>
+      <h1>Overriding data-testid</h1>
 
-      <div data-testid="div-test-id">
-        Testing with test id
-      </div>
+      {/* <div data-testid='test-div'>
+        Dummy Text
+      </div> */}
 
-      <div data-testid="div-test-id">
-        Testing 2 with test id
-      </div>
-
-      <div data-testid="h2-test-id">
-        h2 tag testing
+      
+      <div element-id='test-div'>
+        Dummy Text
       </div>
 
     </div>

@@ -1,27 +1,10 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, configure } from '@testing-library/react';
 import App from './App';
 
-// test('testing with test id', () => {
-//   render(<App />);
+configure({testIdAttribute: 'element-id'});
 
-//   const divId = screen.getByTestId('div-test-id');
-//   expect(divId).toBeInTheDocument();
-// })
-
-test('testing with test id', () => {
+test('test div with data test id', () => {
   render(<App />);
-
-  const divId = screen.getAllByTestId('div-test-id');
-  
-  for (let i = 0; i < divId.length; i++){
-    expect(divId[i]).toBeInTheDocument();
-  }
-})
-
-
-test('testing h2 with test id', () => {
-  render(<App />);
-
-  const h2 = screen.getByTestId('h2-test-id');
-  expect(h2).toBeInTheDocument();
+  const divElement = screen.getByTestId('test-div');
+  expect(divElement).toBeInTheDocument();
 })
