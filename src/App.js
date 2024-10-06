@@ -4,10 +4,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>RTL Query : ByPlaceholderText</h1>
-      <input type="text" placeholder='enter username' defaultValue={'khalid'} />
-      <input type="text" placeholder='enter username' defaultValue={'khalid'}/>
+      <h1>RTL Query : getByText and getAllByText</h1>
 
+      <button>Login</button>
+      
+      <p className='paraStyle' id="p1">P tag testing</p>
+
+      <h1>Heading Tag</h1>
+      <h1>Heading Tag</h1>
 
     </div>
   );

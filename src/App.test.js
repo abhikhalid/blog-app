@@ -1,21 +1,36 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-
-// test('test case for single input field', () => {
-//   render(<App />);
-//   const input = screen.getByPlaceholderText('enter username');
-
-//   expect(input).toBeInTheDocument();
-// });
-
-
-test('test case for multiple input fields', () => {
+test('single Button testing', () => { 
   render(<App />);
-  const inputs = screen.getAllByPlaceholderText('enter username');
+  
+  const btn = screen.getByText('Login');
 
-  for (let i = 0; i < inputs.length; i++){
-    expect(inputs[i]).toBeInTheDocument();
-    expect(inputs[i]).toHaveValue('khalid');
+  expect(btn).toBeInTheDocument();
+})
+ 
+test('single p tag testing', () => {
+  render(<App />);
+
+  const pTag = screen.getByText('P tag testing');
+
+  expect(pTag).toBeInTheDocument();
+  expect(pTag).toHaveClass('paraStyle');
+  expect(pTag).toHaveAttribute('id');
+});
+
+// test('single h1 tag testing', () => { 
+//   render(<App />);
+//   const h1Tag = screen.getByText('Heading Tag');
+//   expect(h1Tag).toBeInTheDocument();
+//  })
+
+test('multiple h1 tag testing', () => {
+  render(<App />);
+  const h1Tag = screen.getAllByText('Heading Tag');
+
+  for (let i = 0; i < h1Tag.length; i++) {
+    const element = h1Tag[i];
+    expect(element).toBeInTheDocument();
   }
 })
