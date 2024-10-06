@@ -7,13 +7,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Test OnChange Event with Input Text</h1>
+      <h1>Test Click Event with Button</h1>
 
-      <input
-        type="text"
-        value={data}
-        onChange={(e) => setData(e.target.value)}
-      />
+      <button onClick={() => setData('updated data')}>Update Data</button>
+      
+      <h1>{data}</h1>
 
     </div>
   );
