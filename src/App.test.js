@@ -16,6 +16,6 @@ test('test case for multiple input fields', () => {
 
   for (let i = 0; i < inputs.length; i++){
     expect(inputs[i]).toBeInTheDocument();
+    expect(inputs[i]).toHaveValue('khalid');
   }
-
 })
