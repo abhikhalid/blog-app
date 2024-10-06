@@ -4,16 +4,22 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Overriding data-testid</h1>
+      <h1>getByDisplayValue and getAllByDisplayValue</h1>
 
-      {/* <div data-testid='test-div'>
-        Dummy Text
-      </div> */}
-
+      <input type="text" defaultValue={'khalid'} />
       
-      <div element-id='test-div'>
-        Dummy Text
-      </div>
+      <br />
+
+      <input type="text" defaultValue={'khalid'} />
+
+      <br />
+
+      <textarea defaultValue={'khalid mahmud'} />
+
+      <br />
+      <br />
+
+      <input type="radio" defaultValue={'male'} />
 
     </div>
   );
