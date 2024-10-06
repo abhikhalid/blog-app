@@ -1,80 +1,16 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test("Test First React app case",()=>{
+test("on change event testing", () => {
   render(<App />);
-  // const text = screen.getByText("First React Test Case");
-  const text = screen.getByText(/First React Test Case/i);
-  const text2 = screen.getByText('Khalid Mahmud');
-  const title = screen.getByTitle('AI generated img');
+  let input = screen.getByRole('textbox');
 
-  expect(text).toBeInTheDocument();
-  expect(text2).toBeInTheDocument();
-  expect(title).toBeInTheDocument();
-})
-
-
-test('Testing Input box', () => {
-  render(<App />);
-  let checkInput = screen.getByRole('textbox');
-  let checkInputPlaceHolder = screen.getByPlaceholderText('Enter User Name');
-
-  expect(checkInput).toBeInTheDocument();
-  expect(checkInputPlaceHolder).toBeInTheDocument();
-  expect(checkInput).toHaveAttribute('name', 'username');
-  expect(checkInput).toHaveAttribute('id', 'userId');
-  expect(checkInput).toHaveAttribute('type', 'text');
-  expect(checkInput).toHaveAttribute('value', 'khalid mahmud');
-});
-
-
-// describe.only('UI test case group', () => {
-describe.skip('UI test case group', () => {
-  test('test case 1', () => {
-    render(<App />);
-    let checkInput = screen.getByRole('textbox');
-    expect(checkInput).toHaveAttribute('name', 'username');
-  })
-
-  test('test case 2', () => {
-    render(<App />);
-    let checkInput = screen.getByRole('textbox');
-    expect(checkInput).toHaveAttribute('name', 'username');
-  })
-
-  test('test case 3', () => {
-    render(<App />);
-    let checkInput = screen.getByRole('textbox');
-    expect(checkInput).toHaveAttribute('name', 'username');
-  })
-})
-
-
-describe('API test case group', () => {
-  test('api test case 1', () => {
-    render(<App />);
-    let checkInput = screen.getByRole('textbox');
-    expect(checkInput).toHaveAttribute('name', 'username');
-  })
-
-  test('api test case 2', () => {
-    render(<App />);
-    let checkInput = screen.getByRole('textbox');
-    expect(checkInput).toHaveAttribute('name', 'username');
-  })
-
-  test('api test case 3', () => {
-    render(<App />);
-    let checkInput = screen.getByRole('textbox');
-    expect(checkInput).toHaveAttribute('name', 'username');
+  //type 'a' into the textbox
+  fireEvent.change(input, {
+    target: {
+    value: 'a'
+    }
   });
-
-
-  describe('inner describe test group', () => {
-    test('api test case 3', () => {
-      render(<App />);
-      let checkInput = screen.getByRole('textbox');
-      expect(checkInput).toHaveAttribute('name', 'username');
-    });
-  });
+  
+  expect(input.value).toBe("a");
 })
