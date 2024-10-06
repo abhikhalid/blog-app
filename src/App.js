@@ -4,19 +4,21 @@ function App() {
 
   return (
     <div className="App">
-      <h1>RTL Query : getAllByRole</h1>
-      <button>Click Me!</button>
-      <button>Click Me!</button>
-      <button>Click Me!</button>
-      <button>Click Me!</button>
-      <button>Click Me!</button>
-      <button>Click Me!</button>
+      <h1>RTL Query : getByLabelText</h1>
 
-       <select>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-       </select>
+      <label htmlFor="user-name">Username</label>
+      <input type="text" id="user-name" defaultValue="khalid" />
+
+      <br />
+      <br />
+      
+
+      <label htmlFor="skills">Skills</label>
+      <input
+        type="checkbox"
+        id="skills"
+        defaultChecked={true}
+      />
 
     </div>
   );
