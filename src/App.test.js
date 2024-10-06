@@ -1,26 +1,18 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test("getByRole Testing", () => {
-  render(<App/>)
-  const btn1 = screen.getByRole('button', {name:'Click 1'});
-  const btn2 = screen.getByRole('button', { name: 'Click 2' });
+test('getAllByRole', () => {
+  render(<App />);
+  const btns = screen.getAllByRole('button');
+  const options = screen.getAllByRole('option');
 
-  const input1 = screen.getByRole('textbox', {
-    name: 'User Name'
-  });
+  // expect(btns[0]).toBeInTheDocument();
+  for (let i = 0; i < btns.length; i++) {
+    expect(btns[i]).toBeInTheDocument();
+  }
 
-  const input2 = screen.getByRole('textbox', {
-    name: 'User age'
-  });
+  for (let i = 0; i < options.length; i++) {
+    expect(options[i]).toBeInTheDocument();
+  }
 
-  const div1 = screen.getByRole('dummy');
-  expect(div1).toBeInTheDocument();
-
-
-
-  expect(btn1).toBeInTheDocument();
-  expect(btn2).toBeInTheDocument();
-  expect(input1).toBeInTheDocument();
-  expect(input2).toBeInTheDocument();
-})
+});
