@@ -26,3 +26,55 @@ test('Testing Input box', () => {
   expect(checkInput).toHaveAttribute('type', 'text');
   expect(checkInput).toHaveAttribute('value', 'khalid mahmud');
 });
+
+
+// describe.only('UI test case group', () => {
+describe.skip('UI test case group', () => {
+  test('test case 1', () => {
+    render(<App />);
+    let checkInput = screen.getByRole('textbox');
+    expect(checkInput).toHaveAttribute('name', 'username');
+  })
+
+  test('test case 2', () => {
+    render(<App />);
+    let checkInput = screen.getByRole('textbox');
+    expect(checkInput).toHaveAttribute('name', 'username');
+  })
+
+  test('test case 3', () => {
+    render(<App />);
+    let checkInput = screen.getByRole('textbox');
+    expect(checkInput).toHaveAttribute('name', 'username');
+  })
+})
+
+
+describe('API test case group', () => {
+  test('api test case 1', () => {
+    render(<App />);
+    let checkInput = screen.getByRole('textbox');
+    expect(checkInput).toHaveAttribute('name', 'username');
+  })
+
+  test('api test case 2', () => {
+    render(<App />);
+    let checkInput = screen.getByRole('textbox');
+    expect(checkInput).toHaveAttribute('name', 'username');
+  })
+
+  test('api test case 3', () => {
+    render(<App />);
+    let checkInput = screen.getByRole('textbox');
+    expect(checkInput).toHaveAttribute('name', 'username');
+  });
+
+
+  describe('inner describe test group', () => {
+    test('api test case 3', () => {
+      render(<App />);
+      let checkInput = screen.getByRole('textbox');
+      expect(checkInput).toHaveAttribute('name', 'username');
+    });
+  });
+})
