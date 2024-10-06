@@ -6,12 +6,17 @@ function App() {
     <div className="App">
       <h1>RTL Query : getByText and getAllByText</h1>
 
-      <button>Login</button>
-      
-      <p className='paraStyle' id="p1">P tag testing</p>
+      <div data-testid="div-test-id">
+        Testing with test id
+      </div>
 
-      <h1>Heading Tag</h1>
-      <h1>Heading Tag</h1>
+      <div data-testid="div-test-id">
+        Testing 2 with test id
+      </div>
+
+      <div data-testid="h2-test-id">
+        h2 tag testing
+      </div>
 
     </div>
   );
