@@ -4,11 +4,18 @@ import userEvent from '@testing-library/user-event';
 import { act } from 'react';
 import User from './User';
 
-test('Props Testing', () => {
-  const name = 'khalid';
+test('functional props testing', async () => {
+  // const testFunction = jest.fn();
 
-  render(<User name={name}/>);
+  // render(<App testFunction={testFunction} />);
 
-  const user = screen.getByText(`User name : ${name}`);
-  expect(user).toBeInTheDocument();
+  // fireEvent.click(screen.getByRole('button'));
+  // expect(testFunction).toHaveBeenCalled();
+
+  const testFunction = jest.fn();
+  render(<App testFunction={testFunction} />);
+
+  const btn = screen.getByRole('button');
+  await userEvent.click(btn);
+  expect(testFunction).toHaveBeenCalled();
 });
