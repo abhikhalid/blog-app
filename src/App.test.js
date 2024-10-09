@@ -1,9 +1,8 @@
 import { fireEvent, render, screen, configure } from '@testing-library/react';
 import App from './App';
 
-test('queryBy test Case ', () => { 
+test('test element with find by',async ()=>{
   render(<App />);
-  // const dv = screen.getByText('Login');
-  const dv = screen.queryByText('Login'); //code e login thakbe but ui te thakbe na
-  expect(dv).not.toBeInTheDocument(); // code e login thakbe but ui te thakbe na
+  const element = await screen.findByText('data found',{}, {timeout: 4000});
+  expect(element).toBeInTheDocument();
 });
