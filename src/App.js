@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
+  const [data, setData] = useState('');
+
   return (
     <div className="App">
 
-      <div>
-        Hello World
-        <p>hi</p>
-        <p>hello</p>
-        <p>hey</p>
-      </div>  
+     <h1>{data}</h1>
+    
+     <button onClick={()=> setData('hello')}>Click me</button>
+        
     </div>
   );
 }
