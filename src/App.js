@@ -4,17 +4,23 @@ function App() {
 
   return (
     <div className="App">
-      <h1>getByTitle and getAllByTitle</h1>
+      <h1>getByAltText and getAllByAltText</h1>
 
-      <button title='click'>Click me</button>
+      <img 
+        alt="black spade suit"
+        src="https://upload.wikimedia.org/wikipedia/commons/8/88/Playing_card_spade_A.svg"
+       />
 
-      <br />
-      <br />
+      <img 
+        alt="black spade suit"
+        src="https://upload.wikimedia.org/wikipedia/commons/8/88/Playing_card_spade_A.svg"
+       />
 
-      <span title='black spade suit'>&#x2660;</span>
-      <span title='black spade suit'>&#x2660;</span>
-
-
+      <img 
+        alt="black spade suit"
+        src="https://upload.wikimedia.org/wikipedia/commons/8/88/Playing_card_spade_A.svg"
+       />
+    
     </div>
   );
 }
