@@ -1,17 +1,25 @@
 import { fireEvent, render, screen, configure } from '@testing-library/react';
 import App from './App';
 
-// test('test image element with alt text', () => { 
-//   render(<App />);
-//   const imgElement = screen.getByAltText('black spade suit');
-//   expect(imgElement).toBeInTheDocument();
-//  })
-
-test('test image element with alt text', () => { 
+test('test input', () => { 
   render(<App />);
-  const img = screen.getAllByAltText('black spade suit');
-  
-  for (let i = 0; i < img.length; i++) {
-    expect(img[i]).toBeInTheDocument();
-  }
- })
+  const input = screen.getByRole('textbox');
+  expect(input).toBeInTheDocument();
+  expect(input).toHaveValue(); //check if value exists or not
+  expect(input).toHaveValue('hello');
+  expect(input).toBeEnabled();
+  expect(input).toHaveAttribute('id');
+  expect(input).toHaveAttribute('data-test');
+  expect(input).toHaveClass("test-style");
+  expect(input).toHaveClass("dummy");
+});
+
+test('test negative cases',() => {
+  render(<App />);
+  const btn = screen.getByRole('button');
+  expect(btn).toBeInTheDocument();
+  expect(btn).toHaveClass('btn');
+  // expect(btn).not.toHaveClass('btn');
+  expect(btn).toHaveAttribute('id');
+  expect(btn).toBeEnabled();
+});

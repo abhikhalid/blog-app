@@ -4,23 +4,21 @@ function App() {
 
   return (
     <div className="App">
-      <h1>getByAltText and getAllByAltText</h1>
+      <h1>Assertion Methods</h1>
 
-      <img 
-        alt="black spade suit"
-        src="https://upload.wikimedia.org/wikipedia/commons/8/88/Playing_card_spade_A.svg"
+      <input
+          type="text" 
+          defaultValue= "hello" 
+          className='test-style dummy'
+          name='userName'
+          id='user-name'
+          data-test='data-test'
        />
 
-      <img 
-        alt="black spade suit"
-        src="https://upload.wikimedia.org/wikipedia/commons/8/88/Playing_card_spade_A.svg"
-       />
-
-      <img 
-        alt="black spade suit"
-        src="https://upload.wikimedia.org/wikipedia/commons/8/88/Playing_card_spade_A.svg"
-       />
-    
+       <button className='btn' id='btn-id'>
+          Click Me
+       </button>
+      
     </div>
   );
 }
