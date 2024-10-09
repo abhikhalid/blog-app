@@ -2,19 +2,10 @@ import { fireEvent, render, screen, configure, within } from '@testing-library/r
 import App from './App';
 import userEvent from '@testing-library/user-event';
 
-test('Click event with user event library', async () => {
-  // render(<App />);
-  // const button = screen.getByRole('button');
-  // const heading = screen.getByRole('heading');
-  // expect(heading).toHaveTextContent('');
-  // fireEvent.click(button);
-  // expect(heading).toHaveTextContent('hello');
+test('on Change event testing', async () => {
+  render(<App/>);
 
-  userEvent.setup();
-  render(<App />);
-
-  const btn = screen.getByText('Click me');
-
-  await userEvent.click(btn);
-  expect(screen.getByText('hello')).toBeInTheDocument();
+  const el = screen.getByRole('textbox');
+  await userEvent.type(el, 'Khalid');
+  expect(screen.getByText('Khalid')).toBeInTheDocument();
 });

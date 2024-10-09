@@ -2,14 +2,19 @@ import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-  const [data, setData] = useState('');
+  const [name, setName] = useState('');
 
   return (
     <div className="App">
+      <h1>onChange Event Testing</h1>
 
-     <h1>{data}</h1>
-    
-     <button onClick={()=> setData('hello')}>Click me</button>
+      <h2>{name}</h2>
+
+      <input
+        type="text"
+        placeholder="enter name"
+        onChange={(e) => setName(e.target.value)}
+      />
         
     </div>
   );
