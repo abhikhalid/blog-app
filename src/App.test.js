@@ -1,11 +1,14 @@
 import { fireEvent, render, screen, configure, within } from '@testing-library/react';
 import App from './App';
 import userEvent from '@testing-library/user-event';
+import { act } from 'react';
+import User from './User';
 
-test('on Change event testing', async () => {
-  render(<App/>);
+test('Props Testing', () => {
+  const name = 'khalid';
 
-  const el = screen.getByRole('textbox');
-  await userEvent.type(el, 'Khalid');
-  expect(screen.getByText('Khalid')).toBeInTheDocument();
+  render(<User name={name}/>);
+
+  const user = screen.getByText(`User name : ${name}`);
+  expect(user).toBeInTheDocument();
 });
