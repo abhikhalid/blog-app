@@ -11,10 +11,12 @@ test('text match with string',()=>{
 
 test('text match with regex',()=>{
   render(<App />);
-  // const div = screen.getByText(/Hello World/i);
-  // const div = screen.getByText(/Hello world/i);
-  // const div = screen.getByText(/lo Wo/i);
-  // const div = screen.getByText(/hello/i);
-  const div = screen.getByText(/Hello w?orld/i); //w na thakle o somossa nai
+  // const div = screen.getByText((content, element) => content.startsWith('Hello'));
+  // const div = screen.getByText((content, element) => content.endsWith('World'));
+  // const div = screen.getByText((content, element) => content.endsWith('ld'));
+  const div = screen.getByText((content, element) =>{
+    return content.includes('ld');
+  });
+  
   expect(div).toBeInTheDocument();
 }); 
