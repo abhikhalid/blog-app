@@ -3,17 +3,30 @@ import './App.css';
 import User from './User';
 
 function App() {
-  const [count, setCounter] = useState(0);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const getData = async() => {
+      let result = await fetch('https://jsonplaceholder.typicode.com/users')
+      result = await result.json();
+      setData(result);
+    }
+
+    getData();
+  }, []);
+
+  console.log(data);
   
   return (
     <div>
-      <button onClick={()=>setCounter(count => count + 1)}>
-        Click to increase: {count}
-      </button>
-
-      <h2>Heading 2</h2>
-      <h5>Heading 5</h5>
-      <input placeholder='enter name'/>
+      <h1>List Of Users</h1>
+      {
+        <ul>
+          {data.map(item => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      }
       
     </div>
   );
