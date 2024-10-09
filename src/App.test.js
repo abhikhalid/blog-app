@@ -1,25 +1,20 @@
 import { fireEvent, render, screen, configure } from '@testing-library/react';
 import App from './App';
 
-test('test input', () => { 
+test('text match with string',()=>{
   render(<App />);
-  const input = screen.getByRole('textbox');
-  expect(input).toBeInTheDocument();
-  expect(input).toHaveValue(); //check if value exists or not
-  expect(input).toHaveValue('hello');
-  expect(input).toBeEnabled();
-  expect(input).toHaveAttribute('id');
-  expect(input).toHaveAttribute('data-test');
-  expect(input).toHaveClass("test-style");
-  expect(input).toHaveClass("dummy");
+  // const div = screen.getByText('Hello World', {exact: false});
+  // const div = screen.getByText('Hello world', {exact: false});
+  const div = screen.getByText('hello', {exact: false});
+  expect(div).toBeInTheDocument();
 });
 
-test('test negative cases',() => {
+test('text match with regex',()=>{
   render(<App />);
-  const btn = screen.getByRole('button');
-  expect(btn).toBeInTheDocument();
-  expect(btn).toHaveClass('btn');
-  // expect(btn).not.toHaveClass('btn');
-  expect(btn).toHaveAttribute('id');
-  expect(btn).toBeEnabled();
-});
+  // const div = screen.getByText(/Hello World/i);
+  // const div = screen.getByText(/Hello world/i);
+  // const div = screen.getByText(/lo Wo/i);
+  // const div = screen.getByText(/hello/i);
+  const div = screen.getByText(/Hello w?orld/i); //w na thakle o somossa nai
+  expect(div).toBeInTheDocument();
+}); 
