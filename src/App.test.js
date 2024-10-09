@@ -4,25 +4,12 @@ import userEvent from '@testing-library/user-event';
 import { act } from 'react';
 import User from './User';
 
-test('testing component', () => {
-  // render(<App />);
-  // const el = screen.getByText('Heading 2');
-  // expect(el).toBeInTheDocument();
+test('testing',()=>{
+  render(<App/>);
 
-  const {container, debug} = render(<App />);
+  const el = screen.getByRole('button', {
+    name: /click to increase: 0/i
+  });
 
-  //option 1
-
-  // console.log(container) 
-
-  //option 2
-  // console.log(prettyDOM(container));
-
-  //option 3
-  // debug();
- 
-  //option 4 (not working, see doc.)
-  // DEBUG_PRINT_DOM(container,1000);  
-
-  logRoles(container);
-});
+  expect(el).toBeInTheDocument();
+})
