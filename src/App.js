@@ -2,12 +2,19 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import User from './User';
 
-function App(props) {
+function App() {
+  const [count, setCounter] = useState(0);
+  
   return (
-    <div className="App">
-      <h1>Functional Props Testing and Mocking</h1>
-       
-      <button onClick={props.testFunction}>Click</button>
+    <div>
+      <button onClick={()=>setCounter(count => count + 1)}>
+        Click to increase: {count}
+      </button>
+
+      <h2>Heading 2</h2>
+      <h5>Heading 5</h5>
+      <input/>
+      
     </div>
   );
 }

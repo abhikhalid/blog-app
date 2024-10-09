@@ -1,21 +1,28 @@
-import { fireEvent, render, screen, configure, within } from '@testing-library/react';
+import { fireEvent, render, screen, configure, within, prettyDOM, logRoles } from '@testing-library/react';
 import App from './App';
 import userEvent from '@testing-library/user-event';
 import { act } from 'react';
 import User from './User';
 
-test('functional props testing', async () => {
-  // const testFunction = jest.fn();
+test('testing component', () => {
+  // render(<App />);
+  // const el = screen.getByText('Heading 2');
+  // expect(el).toBeInTheDocument();
 
-  // render(<App testFunction={testFunction} />);
+  const {container, debug} = render(<App />);
 
-  // fireEvent.click(screen.getByRole('button'));
-  // expect(testFunction).toHaveBeenCalled();
+  //option 1
 
-  const testFunction = jest.fn();
-  render(<App testFunction={testFunction} />);
+  // console.log(container) 
 
-  const btn = screen.getByRole('button');
-  await userEvent.click(btn);
-  expect(testFunction).toHaveBeenCalled();
+  //option 2
+  // console.log(prettyDOM(container));
+
+  //option 3
+  // debug();
+ 
+  //option 4 (not working, see doc.)
+  // DEBUG_PRINT_DOM(container,1000);  
+
+  logRoles(container);
 });
